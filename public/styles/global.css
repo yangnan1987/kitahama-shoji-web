@@ -201,21 +201,6 @@ a {
   gap: 14px;
 }
 
-.heroDecor {
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid rgba(22, 24, 29, 0.08);
-  background: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-.heroDecorSvg {
-  display: block;
-  width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
-
 .heroTitle {
   font-size: clamp(30px, 3.4vw, 44px);
   line-height: 1.25;
