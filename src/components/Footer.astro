@@ -2,6 +2,7 @@
 import AddressBlock from './AddressBlock.astro';
 import LegalBlock from './LegalBlock.astro';
 import { SITE } from '../constants/site';
+import { withBase } from '../utils/paths';
 ---
 
 <footer class="footer">
@@ -19,9 +20,9 @@ import { SITE } from '../constants/site';
           </span>
         </div>
         <nav class="footerNav" aria-label="フッターナビゲーション">
-          <a class="footerNavLink" href="/properties">取扱物件</a>
-          <a class="footerNavLink" href="/contact">お問い合わせ</a>
-          <a class="footerNavLink" href="/privacy">プライバシーポリシー</a>
+          <a class="footerNavLink" href={withBase('/properties')}>取扱物件</a>
+          <a class="footerNavLink" href={withBase('/contact')}>お問い合わせ</a>
+          <a class="footerNavLink" href={withBase('/privacy')}>プライバシーポリシー</a>
         </nav>
       </div>
       <AddressBlock />

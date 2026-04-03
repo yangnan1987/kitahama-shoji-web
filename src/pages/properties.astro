@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 ---
 
 <BaseLayout
@@ -24,8 +25,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           当サイトへの物件掲載を順次整備してまいります。お急ぎの場合は、お電話またはお問い合わせページよりご連絡ください。
         </p>
         <div class="sectionCta">
-          <a class="btn" href="/contact">お問い合わせへ</a>
-          <a class="btn btnGhost" href="/business">事業内容を見る</a>
+          <a class="btn" href={withBase('/contact')}>お問い合わせへ</a>
+          <a class="btn btnGhost" href={withBase('/business')}>事業内容を見る</a>
         </div>
       </div>
     </div>

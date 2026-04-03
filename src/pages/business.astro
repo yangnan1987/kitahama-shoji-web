@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
 ---
 
 <BaseLayout title="北浜商事株式会社 | 事業内容" description="不動産の売買・賃貸・仲介、管理・コンサルティング等の事業内容。">
@@ -43,7 +44,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="noteText">
           法令で求められる表示事項は「宅建業者表示」ページにまとめて掲載しています。
         </p>
-        <a class="textLink" href="/legal">宅建業者表示へ</a>
+        <a class="textLink" href={withBase('/legal')}>宅建業者表示へ</a>
       </div>
     </div>
   </section>

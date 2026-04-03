@@ -1,19 +1,20 @@
 ---
 import { SITE } from '../constants/site';
+import { withBase } from '../utils/paths';
 
 const nav = [
-  { href: '/', label: 'トップ' },
-  { href: '/company', label: '会社概要' },
-  { href: '/business', label: '事業内容' },
-  { href: '/properties', label: '取扱物件' },
-  { href: '/legal', label: '宅建業者表示' },
-  { href: '/contact', label: 'お問い合わせ' },
+  { href: withBase('/'), label: 'トップ' },
+  { href: withBase('/company'), label: '会社概要' },
+  { href: withBase('/business'), label: '事業内容' },
+  { href: withBase('/properties'), label: '取扱物件' },
+  { href: withBase('/legal'), label: '宅建業者表示' },
+  { href: withBase('/contact'), label: 'お問い合わせ' },
 ];
 ---
 
 <header class="header">
   <div class="container headerInner">
-    <a class="brand" href="/">
+    <a class="brand" href={withBase('/')}>
       <span class="brandName">{SITE.nameJa}</span>
       <span class="brandSub">{SITE.nameEn}</span>
     </a>
