@@ -24,8 +24,8 @@ jobs:
           cache: npm
       - name: Install and build
         env:
-          PUBLIC_SITE_URL: 'https://yangnan1987.github.io'
-          PUBLIC_BASE_PATH: '/kitahama-shoji-web/'
+          PUBLIC_SITE_URL: 'https://kitahamashoji.com'
+          PUBLIC_BASE_PATH: '/'
         run: |
           npm ci
           npm run build

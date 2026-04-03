@@ -10,9 +10,7 @@ function normalizeBasePath(input) {
 }
 
 const site = process.env.PUBLIC_SITE_URL ?? 'https://kitahamashoji.com';
-const base = normalizeBasePath(
-  process.env.PUBLIC_BASE_PATH ?? '/kitahama-shoji-web/'
-);
+const base = normalizeBasePath(process.env.PUBLIC_BASE_PATH ?? '/');
 
 // https://astro.build/config
 export default defineConfig({
