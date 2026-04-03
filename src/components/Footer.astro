@@ -1,0 +1,37 @@
+---
+import AddressBlock from './AddressBlock.astro';
+import LegalBlock from './LegalBlock.astro';
+import { SITE } from '../constants/site';
+---
+
+<footer class="footer">
+  <div class="container footerInner">
+    <div class="footerTop">
+      <div class="footerBrand">
+        <div class="footerName">{SITE.nameJa}</div>
+        <div class="footerMeta">
+          <span>サイト開設：{SITE.launched}</span>
+          <span aria-hidden="true">・</span>
+          <span>
+            <a class="footerLink" href={`${SITE.origin}/`}>
+              kitahamashoji.com
+            </a>
+          </span>
+        </div>
+        <nav class="footerNav" aria-label="フッターナビゲーション">
+          <a class="footerNavLink" href="/properties">取扱物件</a>
+          <a class="footerNavLink" href="/contact">お問い合わせ</a>
+          <a class="footerNavLink" href="/privacy">プライバシーポリシー</a>
+        </nav>
+      </div>
+      <AddressBlock />
+    </div>
+
+    <div class="footerBottom">
+      <LegalBlock />
+      <div class="copyright">
+        <small>© {new Date().getFullYear()} {SITE.nameJa}</small>
+      </div>
+    </div>
+  </div>
+</footer>

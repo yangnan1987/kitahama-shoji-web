@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../constants/site';
+---
+
+<BaseLayout title="北浜商事株式会社 | 会社概要" description="北浜商事株式会社の会社概要・所在地のご案内。">
+  <section class="pageHead">
+    <div class="container">
+      <p class="kicker">Company</p>
+      <h1 class="pageTitle">会社概要</h1>
+      <p class="pageLead">
+        信頼感と透明性を大切に、必要な情報を分かりやすく掲載します。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="twoCol">
+        <div>
+          <h2 class="sectionTitle">基本情報</h2>
+          <dl class="dl pageDl">
+            <div class="dlRow">
+              <dt>商号</dt>
+              <dd>北浜商事株式会社</dd>
+            </div>
+            <div class="dlRow">
+              <dt>代表者</dt>
+              <dd>代表取締役　時　金龍</dd>
+            </div>
+            <div class="dlRow">
+              <dt>所在地</dt>
+              <dd>
+                {SITE.addressLines[0]}<br />
+                {SITE.addressLines[1]}
+              </dd>
+            </div>
+            <div class="dlRow">
+              <dt>電話番号</dt>
+              <dd>
+                <a class="textLink" href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
+              </dd>
+            </div>
+            <div class="dlRow">
+              <dt>サイト開設</dt>
+              <dd>{SITE.launched}</dd>
+            </div>
+          </dl>
+        </div>
+        <div>
+          <h2 class="sectionTitle">ご挨拶</h2>
+          <div class="prose">
+            <p>
+              地域の暮らしと資産に関わる大切な意思決定を、安心して進められるように。
+              北浜商事株式会社は、誠実な説明と丁寧な手続きで、お客様のご希望に寄り添います。
+            </p>
+            <p class="muted">
+              ※本ページは公開用の情報整理を目的としており、必要に応じて加筆・更新します。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="sectionCta">
+        <a class="btn btnGhost" href="/legal">宅建業者表示（免許情報）を見る</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

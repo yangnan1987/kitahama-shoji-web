@@ -1,0 +1,27 @@
+---
+import { SITE } from '../constants/site';
+
+type Props = {
+  /** false のとき電話行を出さない（必要なら） */
+  showPhone?: boolean;
+};
+
+const { showPhone = true } = Astro.props;
+---
+
+<section class="addressBlock" aria-label="所在地・連絡先">
+  <h3 class="smallTitle">所在地</h3>
+  <address class="address">
+    {SITE.addressLines.map((l) => (
+      <span class="addressLine">{l}</span>
+    ))}
+  </address>
+  {showPhone && (
+    <div class="addressPhoneWrap">
+      <h3 class="smallTitle">お電話でのお問い合わせ</h3>
+      <p class="addressPhone">
+        <a class="textLink" href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
+      </p>
+    </div>
+  )}
+</section>

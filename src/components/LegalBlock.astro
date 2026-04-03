@@ -1,0 +1,109 @@
+---
+const license = {
+  number: '大阪府知事（１）第65455号',
+  date: '令和6年7月25日',
+};
+
+const company = {
+  name: '北浜商事株式会社',
+  representative: '代表取締役　時　金龍',
+};
+
+const chief = {
+  name: '柳田千代美',
+  regNo: '（大阪）第111305号',
+  office: '大阪市中央区東心斎橋1-3-10-602',
+};
+
+const association = {
+  name: '公益社団法人　全国宅地建物取引業保証協会',
+  address: '東京都千代田区岩本町2丁目6番3号',
+  osakaName: '公益社団法人　全国宅地建物取引業保証協会　大阪本部',
+  osakaAddress: '大阪市中央区船越町2丁目2番1号　大阪府宅建会館',
+  depositOffice: '東京法務局',
+  depositAddress: '東京都千代田区九段南1丁目1番15号',
+};
+---
+
+<section class="legalBlock" aria-label="宅地建物取引業者表示">
+  <h3 class="smallTitle">宅地建物取引業者表示</h3>
+
+  <dl class="dl">
+    <div class="dlRow">
+      <dt>称号（商号）</dt>
+      <dd>{company.name}</dd>
+    </div>
+    <div class="dlRow">
+      <dt>代表者</dt>
+      <dd>{company.representative}</dd>
+    </div>
+    <div class="dlRow">
+      <dt>免許証番号</dt>
+      <dd>{license.number}</dd>
+    </div>
+    <div class="dlRow">
+      <dt>免許年月日</dt>
+      <dd>{license.date}</dd>
+    </div>
+  </dl>
+
+  <div class="subBlock">
+    <h4 class="miniTitle">宅建主任者</h4>
+    <dl class="dl">
+      <div class="dlRow">
+        <dt>氏名</dt>
+        <dd>{chief.name}</dd>
+      </div>
+      <div class="dlRow">
+        <dt>登録番号</dt>
+        <dd>{chief.regNo}</dd>
+      </div>
+      <div class="dlRow">
+        <dt>事業に従事する事務所</dt>
+        <dd>{chief.office}</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="subBlock">
+    <h4 class="miniTitle">宅地建物取引業保証協会</h4>
+    <dl class="dl">
+      <div class="dlRow">
+        <dt>名称</dt>
+        <dd>{association.name}</dd>
+      </div>
+      <div class="dlRow">
+        <dt>所在地</dt>
+        <dd>{association.address}</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="subBlock">
+    <h4 class="miniTitle">地方本部</h4>
+    <dl class="dl">
+      <div class="dlRow">
+        <dt>名称</dt>
+        <dd>{association.osakaName}</dd>
+      </div>
+      <div class="dlRow">
+        <dt>所在地</dt>
+        <dd>{association.osakaAddress}</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="subBlock">
+    <h4 class="miniTitle">弁済業務保証金の供託所</h4>
+    <dl class="dl">
+      <div class="dlRow">
+        <dt>供託所</dt>
+        <dd>{association.depositOffice}</dd>
+      </div>
+      <div class="dlRow">
+        <dt>所在地</dt>
+        <dd>{association.depositAddress}</dd>
+      </div>
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../constants/site';
+---
+
+<BaseLayout
+  title="北浜商事株式会社 | プライバシーポリシー"
+  description="個人情報の取扱いについて（プライバシーポリシー）。"
+>
+  <section class="pageHead">
+    <div class="container">
+      <p class="kicker">Privacy</p>
+      <h1 class="pageTitle">プライバシーポリシー</h1>
+      <p class="pageLead">
+        {SITE.nameJa}（以下「当社」）は、個人情報の保護に関する法令等を遵守し、適切に取り扱います。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container proseWide">
+      <p class="muted policyNote">
+        ※本ページは一般的な構成のたたき台です。公開前に内容をご確認のうえ、必要に応じて専門家へご相談ください。
+      </p>
+
+      <article class="policyArticle">
+        <h2 class="policyH2">1. 取得する個人情報</h2>
+        <p>当社は、業務の遂行に必要な範囲で、氏名、住所、電話番号、電子メールアドレス等の個人情報を取得する場合があります。</p>
+
+        <h2 class="policyH2">2. 利用目的</h2>
+        <p>取得した個人情報は、次の目的の範囲内で利用します。</p>
+        <ul class="policyList">
+          <li>不動産に関するご相談・お取引の手続き、連絡、本人確認</li>
+          <li>契約の履行、アフターサービス、お問い合わせ対応</li>
+          <li>法令に基づく対応、紛争解決</li>
+          <li>当社サービスの改善・安全確保のための分析（個人を識別できない形に加工する場合を含む）</li>
+        </ul>
+
+        <h2 class="policyH2">3. 第三者提供</h2>
+        <p>
+          当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。業務委託先に預託する場合は、必要な契約・監督を行います。
+        </p>
+
+        <h2 class="policyH2">4. 安全管理</h2>
+        <p>当社は、個人情報の漏えい、滅失、毀損等を防止するため、合理的な安全対策を講じます。</p>
+
+        <h2 class="policyH2">5. 開示・訂正・利用停止等</h2>
+        <p>
+          ご本人から個人情報の開示、訂正、利用停止等のお申し出があった場合、法令に従い適切に対応します。
+        </p>
+
+        <h2 class="policyH2">6. Cookie 等の利用</h2>
+        <p>
+          当サイトで Cookie やアクセス解析を利用する場合は、その目的・方法を別途明示し、必要に応じて同意を得ます。
+        </p>
+
+        <h2 class="policyH2">7. お問い合わせ窓口</h2>
+        <p>
+          個人情報の取扱いに関するお問い合わせは、
+          <a class="textLink" href="/contact">お問い合わせ</a>
+          ページ記載の連絡先までご連絡ください。
+        </p>
+
+        <h2 class="policyH2">8. 改定</h2>
+        <p>当社は、法令の改正や業務内容の変更等に応じて、本ポリシーを改定することがあります。改定後の内容は当サイトに掲載した時点から効力を生じます。</p>
+
+        <p class="muted policyUpdated">制定日：2026年4月3日</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .proseWide {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .policyNote {
+    margin: 0 0 24px 0;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    background: rgba(31, 58, 90, 0.06);
+    border: 1px solid rgba(31, 58, 90, 0.12);
+  }
+
+  .policyArticle {
+    color: var(--text);
+  }
+
+  .policyH2 {
+    font-size: 18px;
+    margin: 28px 0 10px 0;
+    letter-spacing: 0.04em;
+  }
+
+  .policyH2:first-of-type {
+    margin-top: 0;
+  }
+
+  .policyArticle p {
+    margin: 0 0 12px 0;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .policyList {
+    margin: 0 0 12px 0;
+    padding-left: 1.25em;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .policyUpdated {
+    margin-top: 32px;
+  }
+</style>

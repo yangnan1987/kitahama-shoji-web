@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LegalBlock from '../components/LegalBlock.astro';
+import AddressBlock from '../components/AddressBlock.astro';
+---
+
+<BaseLayout title="北浜商事株式会社 | 宅建業者表示" description="宅地建物取引業者としての表示事項。">
+  <section class="pageHead">
+    <div class="container">
+      <p class="kicker">Legal</p>
+      <h1 class="pageTitle">宅建業者表示</h1>
+      <p class="pageLead">
+        宅地建物取引業法等に基づく表示事項を掲載します（公開前に必ず原本と照合してください）。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="twoCol">
+        <div>
+          <LegalBlock />
+        </div>
+        <div>
+          <div class="panel">
+            <h2 class="panelTitle">所在地</h2>
+            <div class="prose">
+              <AddressBlock />
+            </div>
+          </div>
+          <div class="panel" style="margin-top: 16px;">
+            <h2 class="panelTitle">サイト開設</h2>
+            <p class="panelText">2026年1月</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

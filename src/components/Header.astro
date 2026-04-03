@@ -1,0 +1,82 @@
+---
+import { SITE } from '../constants/site';
+
+const nav = [
+  { href: '/', label: 'トップ' },
+  { href: '/company', label: '会社概要' },
+  { href: '/business', label: '事業内容' },
+  { href: '/properties', label: '取扱物件' },
+  { href: '/legal', label: '宅建業者表示' },
+  { href: '/contact', label: 'お問い合わせ' },
+];
+---
+
+<header class="header">
+  <div class="container headerInner">
+    <a class="brand" href="/">
+      <span class="brandName">{SITE.nameJa}</span>
+      <span class="brandSub">{SITE.nameEn}</span>
+    </a>
+    <button
+      type="button"
+      class="navToggle"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      aria-label="メニューを開く"
+    >
+      <span class="navToggleBars" aria-hidden="true"></span>
+      <span class="navToggleLabel">メニュー</span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="メインナビゲーション">
+      {nav.map((item) => (
+        <a class="navLink" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  function initNav() {
+    const toggle = document.querySelector('[data-nav-toggle]');
+    const nav = document.getElementById('primary-nav');
+    if (!(toggle instanceof HTMLButtonElement) || !nav) return;
+
+    const mq = window.matchMedia('(min-width: 901px)');
+
+    const close = () => {
+      nav.classList.remove('nav--open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'メニューを開く');
+    };
+
+    const open = () => {
+      nav.classList.add('nav--open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'メニューを閉じる');
+    };
+
+    toggle.addEventListener('click', () => {
+      if (nav.classList.contains('nav--open')) close();
+      else open();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+
+    nav.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        if (!mq.matches) close();
+      });
+    });
+
+    mq.addEventListener('change', (e) => {
+      if (e.matches) close();
+    });
+  }
+
+  initNav();
+</script>

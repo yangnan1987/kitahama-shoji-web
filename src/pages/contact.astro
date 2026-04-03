@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AddressBlock from '../components/AddressBlock.astro';
+import { SITE } from '../constants/site';
+---
+
+<BaseLayout
+  title="北浜商事株式会社 | お問い合わせ"
+  description="北浜商事株式会社へのお問い合わせ・所在地・電話番号のご案内。"
+>
+  <section class="pageHead">
+    <div class="container">
+      <p class="kicker">Contact</p>
+      <h1 class="pageTitle">お問い合わせ</h1>
+      <p class="pageLead">
+        不動産に関するご相談・お見積りなど、お気軽にお問い合わせください。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="twoCol">
+        <div>
+          <AddressBlock />
+          <div class="panel" style="margin-top: 16px;">
+            <h2 class="panelTitle">営業時間の目安</h2>
+            <p class="panelText">
+              平日 9:00〜18:00（土日祝・年末年始は休業となる場合があります）
+            </p>
+            <p class="panelText muted">
+              ※実際の受付時間は変更になる場合があります。お電話にてご確認ください。
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="prose">
+            <p>
+              まずはお電話にて、ご希望やご状況をお聞かせください。内容に応じて、必要な資料や今後の流れをご案内いたします。
+            </p>
+            <p class="muted">
+              メールでのお問い合わせフォームは準備中です。公開まで少々お待ちください。
+            </p>
+            <p class="muted">
+              宅地建物取引業者としての表示事項は
+              <a class="textLink" href="/legal">宅建業者表示</a>
+              をご覧ください。
+            </p>
+          </div>
+          <div class="sectionCta">
+            <a class="btn" href={`tel:${SITE.phoneTel}`}>電話する（{SITE.phoneDisplay}）</a>
+            <a class="btn btnGhost" href="/company">会社概要へ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
