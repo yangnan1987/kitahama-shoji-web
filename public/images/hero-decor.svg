@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="presentation" aria-hidden="true">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(31, 58, 90, 0.14)"/>
+      <stop offset="100%" stop-color="rgba(193, 139, 58, 0.12)"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="304" height="224" rx="20" fill="url(#heroGrad)" stroke="rgba(22,24,29,0.08)"/>
+  <path d="M48 180 L48 120 L72 100 L96 120 L96 180 M112 180 L112 88 L156 60 L200 88 L200 180 M216 180 L216 108 L248 84 L280 108 L280 180" fill="none" stroke="rgba(31,58,90,0.35)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="258" cy="52" r="22" fill="rgba(255,255,255,0.55)" stroke="rgba(31,58,90,0.15)"/>
+  <path d="M246 52 L254 60 L272 42" fill="none" stroke="rgba(31,58,90,0.4)" stroke-width="2" stroke-linecap="round"/>
+</svg>

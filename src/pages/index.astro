@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroDecor from '../components/illustrations/HeroDecor.astro';
+import { SITE } from '../constants/site';
 import { withBase } from '../utils/paths';
 ---
 
 <BaseLayout
   title="北浜商事株式会社 | トップ"
-  description="大阪・中央区（心斎橋）を拠点に、不動産の売買・賃貸・仲介等のご相談を承ります。"
+  description="大阪・中央区を拠点とする不動産会社の公式サイト。会社情報・事業内容・宅建表示を掲載しています。"
 >
   <section class="hero">
     <div class="container heroInner">
@@ -16,25 +18,28 @@ import { withBase } from '../utils/paths';
           住まいと資産の選択を支える。
         </h1>
         <p class="heroLead">
-          北浜商事株式会社は、地域に根差した不動産のご相談窓口として、分かりやすいご提案と確かな手続きを大切にしています。
+          北浜商事株式会社は、誠実な説明と丁寧な手続きを大切に、不動産に関する情報を分かりやすくお届けします。
         </p>
         <div class="heroCtas" role="group" aria-label="主要導線">
           <a class="btn" href={withBase('/company')}>会社概要を見る</a>
-          <a class="btn btnGhost" href={withBase('/contact')}>お問い合わせ</a>
+          <a class="btn btnGhost" href={withBase('/contact')}>アクセス</a>
           <a class="btn btnGhost" href={withBase('/legal')}>宅建業者表示</a>
         </div>
       </div>
-      <div class="heroCard" aria-label="要点">
-        <div class="card">
-          <div class="cardTitle">拠点</div>
-          <div class="cardBody">
-            <div class="muted">〒542-0083</div>
-            <div>大阪府大阪市中央区東心斎橋1-3-10-602</div>
+      <div class="heroAside">
+        <HeroDecor />
+        <div class="heroCard" aria-label="要点">
+          <div class="card">
+            <div class="cardTitle">拠点</div>
+            <div class="cardBody">
+              <div class="muted">{SITE.addressLines[0]}</div>
+              <div>{SITE.addressLines[1]}</div>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="cardTitle">サイト開設</div>
-          <div class="cardBody">2026年1月</div>
+          <div class="card">
+            <div class="cardTitle">サイト開設</div>
+            <div class="cardBody">{SITE.launched}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -44,15 +49,15 @@ import { withBase } from '../utils/paths';
     <div class="container">
       <h2 class="sectionTitle">事業のご案内</h2>
       <div class="grid3">
-        <div class="panel">
+        <div class="panel featureCard">
           <h3 class="panelTitle">売買・仲介</h3>
           <p class="panelText">条件整理から契約まで、安心して進められるよう丁寧にご案内します。</p>
         </div>
-        <div class="panel">
+        <div class="panel featureCard">
           <h3 class="panelTitle">賃貸</h3>
           <p class="panelText">入居・運用のご要望を踏まえ、最適な選択肢をご提案します。</p>
         </div>
-        <div class="panel">
+        <div class="panel featureCard">
           <h3 class="panelTitle">管理・コンサルティング</h3>
           <p class="panelText">運用・管理に関するお悩みを整理し、実行可能な形に落とし込みます。</p>
         </div>
@@ -63,4 +68,3 @@ import { withBase } from '../utils/paths';
     </div>
   </section>
 </BaseLayout>
-

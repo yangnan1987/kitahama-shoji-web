@@ -1,36 +1,41 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageDecor from '../components/illustrations/PageDecor.astro';
 import LegalBlock from '../components/LegalBlock.astro';
 import AddressBlock from '../components/AddressBlock.astro';
+import { SITE } from '../constants/site';
 ---
 
 <BaseLayout title="北浜商事株式会社 | 宅建業者表示" description="宅地建物取引業者としての表示事項。">
   <section class="pageHead">
-    <div class="container">
-      <p class="kicker">Legal</p>
-      <h1 class="pageTitle">宅建業者表示</h1>
-      <p class="pageLead">
-        宅地建物取引業法等に基づく表示事項を掲載します（公開前に必ず原本と照合してください）。
-      </p>
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Legal</p>
+        <h1 class="pageTitle">宅建業者表示</h1>
+        <p class="pageLead">
+          宅地建物取引業法等に基づく表示事項を掲載します（公開前に必ず原本と照合してください）。
+        </p>
+      </div>
+      <PageDecor variant="legal" />
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="twoCol">
-        <div>
+      <div class="twoCol twoCol--alignStart">
+        <div class="legalMain">
           <LegalBlock />
         </div>
         <div>
-          <div class="panel">
+          <div class="panel legalSidePanel">
             <h2 class="panelTitle">所在地</h2>
             <div class="prose">
-              <AddressBlock />
+              <AddressBlock hideTitle />
             </div>
           </div>
-          <div class="panel" style="margin-top: 16px;">
+          <div class="panel panelStack">
             <h2 class="panelTitle">サイト開設</h2>
-            <p class="panelText">2026年1月</p>
+            <p class="panelText">{SITE.launched}</p>
           </div>
         </div>
       </div>
@@ -38,3 +43,12 @@ import AddressBlock from '../components/AddressBlock.astro';
   </section>
 </BaseLayout>
 
+<style>
+  .legalMain {
+    min-width: 0;
+  }
+
+  .legalSidePanel {
+    padding-bottom: 18px;
+  }
+</style>

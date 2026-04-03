@@ -1,0 +1,9 @@
+---
+import { withBase } from '../../utils/paths';
+
+const src = withBase('/images/hero-decor.svg');
+---
+
+<div class="heroDecor" aria-hidden="true">
+  <img class="heroDecorSvg" src={src} alt="" width="320" height="240" decoding="async" loading="eager" />
+</div>

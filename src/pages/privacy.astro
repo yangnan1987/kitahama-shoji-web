@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageDecor from '../components/illustrations/PageDecor.astro';
 import { SITE } from '../constants/site';
 import { withBase } from '../utils/paths';
 ---
@@ -9,12 +10,15 @@ import { withBase } from '../utils/paths';
   description="個人情報の取扱いについて（プライバシーポリシー）。"
 >
   <section class="pageHead">
-    <div class="container">
-      <p class="kicker">Privacy</p>
-      <h1 class="pageTitle">プライバシーポリシー</h1>
-      <p class="pageLead">
-        {SITE.nameJa}（以下「当社」）は、個人情報の保護に関する法令等を遵守し、適切に取り扱います。
-      </p>
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Privacy</p>
+        <h1 class="pageTitle">プライバシーポリシー</h1>
+        <p class="pageLead">
+          {SITE.nameJa}（以下「当社」）は、個人情報の保護に関する法令等を遵守し、適切に取り扱います。
+        </p>
+      </div>
+      <PageDecor variant="privacy" />
     </div>
   </section>
 
@@ -26,13 +30,13 @@ import { withBase } from '../utils/paths';
 
       <article class="policyArticle">
         <h2 class="policyH2">1. 取得する個人情報</h2>
-        <p>当社は、業務の遂行に必要な範囲で、氏名、住所、電話番号、電子メールアドレス等の個人情報を取得する場合があります。</p>
+        <p>当社は、業務の遂行に必要な範囲で、氏名、住所、連絡先情報等の個人情報を取得する場合があります。</p>
 
         <h2 class="policyH2">2. 利用目的</h2>
         <p>取得した個人情報は、次の目的の範囲内で利用します。</p>
         <ul class="policyList">
-          <li>不動産に関するご相談・お取引の手続き、連絡、本人確認</li>
-          <li>契約の履行、アフターサービス、お問い合わせ対応</li>
+          <li>不動産に関するお取引の手続き、連絡、本人確認</li>
+          <li>契約の履行、アフターサービス、ご依頼への対応</li>
           <li>法令に基づく対応、紛争解決</li>
           <li>当社サービスの改善・安全確保のための分析（個人を識別できない形に加工する場合を含む）</li>
         </ul>
@@ -55,11 +59,11 @@ import { withBase } from '../utils/paths';
           当サイトで Cookie やアクセス解析を利用する場合は、その目的・方法を別途明示し、必要に応じて同意を得ます。
         </p>
 
-        <h2 class="policyH2">7. お問い合わせ窓口</h2>
+        <h2 class="policyH2">7. 開示等の請求について</h2>
         <p>
-          個人情報の取扱いに関するお問い合わせは、
-          <a class="textLink" href={withBase('/contact')}>お問い合わせ</a>
-          ページ記載の連絡先までご連絡ください。
+          個人情報の取扱いに関する開示・訂正・利用停止等のご請求は、
+          <a class="textLink" href={withBase('/contact')}>アクセス</a>
+          ページに記載の所在地をご確認のうえ、書面等をお送りください。
         </p>
 
         <h2 class="policyH2">8. 改定</h2>

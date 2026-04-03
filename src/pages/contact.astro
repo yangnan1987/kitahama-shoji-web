@@ -1,59 +1,115 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AddressBlock from '../components/AddressBlock.astro';
-import { SITE } from '../constants/site';
+import PageDecor from '../components/illustrations/PageDecor.astro';
 import { withBase } from '../utils/paths';
+
+/** 事務所周辺の概略（OpenStreetMap 埋め込み用 bbox） */
+const mapEmbedSrc =
+  'https://www.openstreetmap.org/export/embed.html?bbox=135.4985%2C34.6710%2C135.5045%2C34.6750&layer=mapnik';
+const mapLinkHref =
+  'https://www.openstreetmap.org/search?query=' +
+  encodeURIComponent('大阪市中央区東心斎橋1-3-10');
 ---
 
 <BaseLayout
-  title="北浜商事株式会社 | お問い合わせ"
-  description="北浜商事株式会社へのお問い合わせ・所在地・電話番号のご案内。"
+  title="北浜商事株式会社 | アクセス"
+  description="北浜商事株式会社の所在地のご案内。"
 >
   <section class="pageHead">
-    <div class="container">
-      <p class="kicker">Contact</p>
-      <h1 class="pageTitle">お問い合わせ</h1>
-      <p class="pageLead">
-        不動産に関するご相談・お見積りなど、お気軽にお問い合わせください。
-      </p>
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Access</p>
+        <h1 class="pageTitle">アクセス</h1>
+        <p class="pageLead">
+          事務所の所在地を掲載しています。地図は参考用です。
+        </p>
+      </div>
+      <PageDecor variant="access" />
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="twoCol">
-        <div>
-          <AddressBlock />
-          <div class="panel" style="margin-top: 16px;">
-            <h2 class="panelTitle">営業時間の目安</h2>
-            <p class="panelText">
-              平日 9:00〜18:00（土日祝・年末年始は休業となる場合があります）
-            </p>
-            <p class="panelText muted">
-              ※実際の受付時間は変更になる場合があります。お電話にてご確認ください。
-            </p>
-          </div>
-        </div>
-        <div>
-          <div class="prose">
-            <p>
-              まずはお電話にて、ご希望やご状況をお聞かせください。内容に応じて、必要な資料や今後の流れをご案内いたします。
-            </p>
-            <p class="muted">
-              メールでのお問い合わせフォームは準備中です。公開まで少々お待ちください。
-            </p>
-            <p class="muted">
-              宅地建物取引業者としての表示事項は
-              <a class="textLink" href={withBase('/legal')}>宅建業者表示</a>
-              をご覧ください。
+      <div class="twoCol accessGrid">
+        <div class="accessCol">
+          <div class="panel">
+            <h2 class="panelTitle">所在地</h2>
+            <AddressBlock hideTitle />
+            <p class="panelText muted accessNote">
+              ※表記は公開用の整理です。訪問の際はエントランス表示等にご注意ください。
             </p>
           </div>
           <div class="sectionCta">
-            <a class="btn" href={`tel:${SITE.phoneTel}`}>電話する（{SITE.phoneDisplay}）</a>
             <a class="btn btnGhost" href={withBase('/company')}>会社概要へ</a>
+            <a class="btn btnGhost" href={withBase('/legal')}>宅建業者表示</a>
           </div>
+        </div>
+        <div class="accessCol">
+          <div class="mapWrap">
+            <iframe
+              title="事務所周辺の地図（OpenStreetMap）"
+              class="mapFrame"
+              src={mapEmbedSrc}
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p class="mapCredit muted">
+            <a class="textLink" href={mapLinkHref} target="_blank" rel="noopener noreferrer">
+              地図を大きく表示（OpenStreetMap）
+            </a>
+          </p>
         </div>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .accessGrid {
+    align-items: start;
+  }
+
+  .accessCol {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .accessNote {
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  .mapWrap {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(22, 24, 29, 0.12);
+    box-shadow: var(--shadow);
+    background: var(--surface);
+    aspect-ratio: 4 / 3;
+    min-height: 220px;
+  }
+
+  .mapFrame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .mapCredit {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  @media (max-width: 900px) {
+    .accessGrid .accessCol:first-child {
+      order: 1;
+    }
+    .accessGrid .accessCol:last-child {
+      order: 0;
+    }
+  }
+</style>

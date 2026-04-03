@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageDecor from '../components/illustrations/PageDecor.astro';
 import { withBase } from '../utils/paths';
 ---
 
@@ -8,12 +9,15 @@ import { withBase } from '../utils/paths';
   description="取扱物件のご案内。掲載物件は順次更新予定です。"
 >
   <section class="pageHead">
-    <div class="container">
-      <p class="kicker">Properties</p>
-      <h1 class="pageTitle">取扱物件</h1>
-      <p class="pageLead">
-        公開中の物件情報は準備中です。ご希望条件に合わせたご案内が可能ですので、お気軽にお問い合わせください。
-      </p>
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Properties</p>
+        <h1 class="pageTitle">取扱物件</h1>
+        <p class="pageLead">
+          公開中の物件情報は準備中です。詳細は順次、本サイトにてご案内する予定です。
+        </p>
+      </div>
+      <PageDecor variant="properties" />
     </div>
   </section>
 
@@ -22,10 +26,10 @@ import { withBase } from '../utils/paths';
       <div class="panel panelWide">
         <h2 class="panelTitle">掲載準備中</h2>
         <p class="panelText">
-          当サイトへの物件掲載を順次整備してまいります。お急ぎの場合は、お電話またはお問い合わせページよりご連絡ください。
+          当サイトへの物件掲載を順次整備してまいります。所在地はアクセスページをご覧ください。
         </p>
         <div class="sectionCta">
-          <a class="btn" href={withBase('/contact')}>お問い合わせへ</a>
+          <a class="btn" href={withBase('/contact')}>アクセス</a>
           <a class="btn btnGhost" href={withBase('/business')}>事業内容を見る</a>
         </div>
       </div>

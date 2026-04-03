@@ -1,41 +1,75 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageDecor from '../components/illustrations/PageDecor.astro';
 import { withBase } from '../utils/paths';
 ---
 
 <BaseLayout title="北浜商事株式会社 | 事業内容" description="不動産の売買・賃貸・仲介、管理・コンサルティング等の事業内容。">
   <section class="pageHead">
-    <div class="container">
-      <p class="kicker">Business</p>
-      <h1 class="pageTitle">事業内容</h1>
-      <p class="pageLead">
-        不動産に関するご相談を中心に、状況整理から実行まで分かりやすく伴走します。
-      </p>
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Business</p>
+        <h1 class="pageTitle">事業内容</h1>
+        <p class="pageLead">
+          不動産に関する情報の整理から、手続きの進め方まで、分かりやすくご案内します。
+        </p>
+      </div>
+      <PageDecor variant="business" />
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="stack">
-        <article class="panel panelWide">
-          <h2 class="panelTitle">不動産の売買・交換・賃貸および仲介／代理</h2>
-          <p class="panelText">
-            ご要望の整理、条件の優先順位付け、契約までの流れを丁寧にご案内します。
-          </p>
+        <article class="panel panelWide panel--accent">
+          <div class="panelRow">
+            <div class="panelRowIcon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 21V10l8-6 8 6v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 21v-8h6v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="panelRowBody">
+              <h2 class="panelTitle">不動産の売買・交換・賃貸および仲介／代理</h2>
+              <p class="panelText">
+                ご要望の整理、条件の優先順位付け、契約までの流れを丁寧にご案内します。
+              </p>
+            </div>
+          </div>
         </article>
 
-        <article class="panel panelWide">
-          <h2 class="panelTitle">不動産の管理</h2>
-          <p class="panelText">
-            物件の管理・運用に関する課題を整理し、継続的に改善できる形に整えます。
-          </p>
+        <article class="panel panelWide panel--accent">
+          <div class="panelRow">
+            <div class="panelRowIcon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="7" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.8" />
+                <path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="panelRowBody">
+              <h2 class="panelTitle">不動産の管理</h2>
+              <p class="panelText">
+                物件の管理・運用に関する課題を整理し、継続的に改善できる形に整えます。
+              </p>
+            </div>
+          </div>
         </article>
 
-        <article class="panel panelWide">
-          <h2 class="panelTitle">総合コンサルタント業務</h2>
-          <p class="panelText">
-            関係者が多い案件でも、情報の見える化と手続きの進行管理を重視します。
-          </p>
+        <article class="panel panelWide panel--accent">
+          <div class="panelRow">
+            <div class="panelRowIcon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 18l4-4 3 3 5-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M18 12h-4V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="panelRowBody">
+              <h2 class="panelTitle">総合コンサルタント業務</h2>
+              <p class="panelText">
+                関係者が多い案件でも、情報の見える化と手続きの進行管理を重視します。
+              </p>
+            </div>
+          </div>
         </article>
       </div>
 
@@ -49,4 +83,3 @@ import { withBase } from '../utils/paths';
     </div>
   </section>
 </BaseLayout>
-

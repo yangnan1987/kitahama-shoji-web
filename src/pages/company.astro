@@ -1,23 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageDecor from '../components/illustrations/PageDecor.astro';
 import { SITE } from '../constants/site';
 import { withBase } from '../utils/paths';
 ---
 
 <BaseLayout title="北浜商事株式会社 | 会社概要" description="北浜商事株式会社の会社概要・所在地のご案内。">
   <section class="pageHead">
-    <div class="container">
-      <p class="kicker">Company</p>
-      <h1 class="pageTitle">会社概要</h1>
-      <p class="pageLead">
-        信頼感と透明性を大切に、必要な情報を分かりやすく掲載します。
-      </p>
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Company</p>
+        <h1 class="pageTitle">会社概要</h1>
+        <p class="pageLead">
+          信頼感と透明性を大切に、必要な情報を分かりやすく掲載します。
+        </p>
+      </div>
+      <PageDecor variant="company" />
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="twoCol">
+      <div class="twoCol twoCol--alignStart">
         <div>
           <h2 class="sectionTitle">基本情報</h2>
           <dl class="dl pageDl">
@@ -37,12 +41,6 @@ import { withBase } from '../utils/paths';
               </dd>
             </div>
             <div class="dlRow">
-              <dt>電話番号</dt>
-              <dd>
-                <a class="textLink" href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
-              </dd>
-            </div>
-            <div class="dlRow">
               <dt>サイト開設</dt>
               <dd>{SITE.launched}</dd>
             </div>
@@ -50,7 +48,7 @@ import { withBase } from '../utils/paths';
         </div>
         <div>
           <h2 class="sectionTitle">ご挨拶</h2>
-          <div class="prose">
+          <div class="prose prose--tight">
             <p>
               地域の暮らしと資産に関わる大切な意思決定を、安心して進められるように。
               北浜商事株式会社は、誠実な説明と丁寧な手続きで、お客様のご希望に寄り添います。
@@ -66,8 +64,8 @@ import { withBase } from '../utils/paths';
 
       <div class="sectionCta">
         <a class="btn btnGhost" href={withBase('/legal')}>宅建業者表示（免許情報）を見る</a>
+        <a class="btn btnGhost" href={withBase('/contact')}>アクセス</a>
       </div>
     </div>
   </section>
 </BaseLayout>
-
