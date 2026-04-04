@@ -2,6 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../constants/site';
 import { withBase } from '../utils/paths';
+import { getCollection } from 'astro:content';
+
+const noticeEntries = await getCollection('notices');
+const latestNotices = noticeEntries
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const dateFmt = new Intl.DateTimeFormat('ja-JP', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
 ---
 
 <BaseLayout
@@ -45,6 +57,45 @@ import { withBase } from '../utils/paths';
 
   <section class="section">
     <div class="container">
+      <h2 class="sectionTitle">大切にしていること</h2>
+      <div class="grid2and2">
+        <div class="panel featureCard">
+          <h3 class="panelTitle">説明の透明性</h3>
+          <p class="panelText">重要事項や契約条件は、専門用語に頼りすぎず、ご理解いただけるよう整理してご説明します。</p>
+        </div>
+        <div class="panel featureCard">
+          <h3 class="panelTitle">手続きの見える化</h3>
+          <p class="panelText">次に何が起きるか、必要な書類は何かを段取りとして共有し、進行状況が把握しやすいようにします。</p>
+        </div>
+        <div class="panel featureCard">
+          <h3 class="panelTitle">法令の遵守</h3>
+          <p class="panelText">宅地建物取引業法など関連法令を踏まえ、表示義務・説明義務を誠実に果たします。</p>
+        </div>
+        <div class="panel featureCard">
+          <h3 class="panelTitle">地域に根ざす姿勢</h3>
+          <p class="panelText">大阪・中央エリアの暮らしや商環境を踏まえ、現地の文脈に沿ったご提案を心がけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tightTop">
+    <div class="container">
+      <div class="panel panelWide trustPanel">
+        <h2 class="panelTitle">宅地建物取引業者として</h2>
+        <p class="panelText trustLead">
+          当社は宅地建物取引業の免許を取得した事業者です。免許証番号は <strong class="trustLicense">{SITE.takkenLicenseNo}</strong> です。
+        </p>
+        <div class="sectionCta trustCta">
+          <a class="btn btnGhost" href={withBase('/legal')}>宅建業者表示を見る</a>
+          <a class="textLink" href={withBase('/faq')}>よくあるご質問</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
       <h2 class="sectionTitle">事業のご案内</h2>
       <div class="grid3">
         <div class="panel featureCard">
@@ -65,4 +116,118 @@ import { withBase } from '../utils/paths';
       </div>
     </div>
   </section>
+
+  <section class="section section--tightTop">
+    <div class="container">
+      <h2 class="sectionTitle">お知らせ</h2>
+      <ul class="homeNoticeList">
+        {
+          latestNotices.map((entry) => (
+            <li class="homeNoticeItem">
+              <a class="homeNoticeLink" href={withBase(`/notices/${entry.id}`)}>
+                <time class="homeNoticeDate" datetime={entry.data.date.toISOString()}>
+                  {dateFmt.format(entry.data.date)}
+                </time>
+                <span class="homeNoticeTitle">{entry.data.title}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="sectionCta">
+        <a class="textLink" href={withBase('/notices')}>お知らせ一覧へ</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .section--tightTop {
+    padding-top: 8px;
+  }
+
+  .grid2and2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  @media (max-width: 900px) {
+    .grid2and2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .trustPanel .trustLead {
+    margin-bottom: 0;
+  }
+
+  .trustLicense {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .trustCta {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    align-items: center;
+  }
+
+  .homeNoticeList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    border-radius: var(--radius);
+    border: 1px solid rgba(22, 24, 29, 0.1);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  }
+
+  .homeNoticeItem {
+    margin: 0;
+    border-bottom: 1px solid rgba(22, 24, 29, 0.08);
+  }
+
+  .homeNoticeItem:last-child {
+    border-bottom: 0;
+  }
+
+  .homeNoticeLink {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px 18px;
+    padding: 14px 18px;
+    align-items: baseline;
+    transition: background 160ms ease;
+  }
+
+  @media (max-width: 600px) {
+    .homeNoticeLink {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+
+  .homeNoticeLink:hover {
+    background: rgba(31, 58, 90, 0.05);
+  }
+
+  .homeNoticeDate {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .homeNoticeTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brand);
+    text-decoration: underline;
+    text-decoration-color: rgba(31, 58, 90, 0.35);
+    text-underline-offset: 3px;
+  }
+</style>

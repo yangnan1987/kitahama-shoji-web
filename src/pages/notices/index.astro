@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageDecor from '../../components/illustrations/PageDecor.astro';
+import { getCollection } from 'astro:content';
+import { withBase } from '../../utils/paths';
+
+const all = await getCollection('notices');
+const sorted = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const dateFmt = new Intl.DateTimeFormat('ja-JP', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  title="北浜商事株式会社 | お知らせ"
+  description="北浜商事株式会社からのお知らせ・更新情報です。"
+>
+  <section class="pageHead">
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Notices</p>
+        <h1 class="pageTitle">お知らせ</h1>
+        <p class="pageLead">サイトの更新や表示に関するご案内を掲載しています。</p>
+      </div>
+      <PageDecor variant="notices" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <ul class="noticeList">
+        {
+          sorted.map((entry) => (
+            <li class="noticeItem">
+              <a class="noticeLink" href={withBase(`/notices/${entry.id}`)}>
+                <time class="noticeDate" datetime={entry.data.date.toISOString()}>
+                  {dateFmt.format(entry.data.date)}
+                </time>
+                <span class="noticeTitle">{entry.data.title}</span>
+                {entry.data.description && <span class="noticeDesc">{entry.data.description}</span>}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="sectionCta">
+        <a class="textLink" href={withBase('/')}>トップへ戻る</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .noticeList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .noticeItem {
+    margin: 0;
+  }
+
+  .noticeLink {
+    display: grid;
+    gap: 6px;
+    padding: 18px 18px;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(22, 24, 29, 0.1);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .noticeLink:hover {
+    border-color: rgba(31, 58, 90, 0.22);
+    box-shadow: 0 12px 28px rgba(31, 58, 90, 0.08);
+  }
+
+  .noticeDate {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .noticeTitle {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--text);
+  }
+
+  .noticeDesc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+</style>

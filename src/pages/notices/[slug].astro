@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageDecor from '../../components/illustrations/PageDecor.astro';
+import { getCollection, render } from 'astro:content';
+import { withBase } from '../../utils/paths';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('notices');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const dateFmt = new Intl.DateTimeFormat('ja-JP', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const desc = entry.data.description ?? entry.data.title;
+---
+
+<BaseLayout title={`北浜商事株式会社 | ${entry.data.title}`} description={desc}>
+  <section class="pageHead">
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">Notices</p>
+        <h1 class="pageTitle">{entry.data.title}</h1>
+        <p class="pageLead">
+          <time datetime={entry.data.date.toISOString()}>{dateFmt.format(entry.data.date)}</time>
+        </p>
+      </div>
+      <PageDecor variant="notices" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container noticeArticleWrap">
+      <article class="noticeArticle prose">
+        <Content />
+      </article>
+      <div class="sectionCta">
+        <a class="btn btnGhost" href={withBase('/notices')}>お知らせ一覧</a>
+        <a class="textLink" href={withBase('/')}>トップへ</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .noticeArticleWrap {
+    max-width: 720px;
+  }
+
+  .noticeArticle :global(p) {
+    margin: 0 0 14px 0;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .noticeArticle :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .noticeArticle :global(a) {
+    color: var(--brand);
+    text-decoration: underline;
+    text-decoration-color: rgba(31, 58, 90, 0.35);
+    text-underline-offset: 4px;
+  }
+
+  .noticeArticle :global(strong) {
+    color: var(--text);
+    font-weight: 700;
+  }
+</style>

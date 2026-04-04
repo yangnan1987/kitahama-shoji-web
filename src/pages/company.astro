@@ -62,9 +62,37 @@ import { withBase } from '../utils/paths';
 
       <div class="hr"></div>
 
+      <div class="twoCol twoCol--alignStart">
+        <div>
+          <h2 class="sectionTitle">理念・姿勢</h2>
+          <div class="prose prose--tight">
+            <p>
+              不動産の選択は、暮らしや事業の土台に長く影響します。当社は、一時的な勧誘ではなく、納得いただける説明と、再現可能な手続きの積み重ねを大切にしています。
+            </p>
+            <p>
+              大阪・中央区を拠点に、地域の商慣行と法令の両方を踏まえ、お客様が次の判断をしやすい情報の出し方を心がけます。
+            </p>
+          </div>
+        </div>
+        <div>
+          <h2 class="sectionTitle">コンプライアンス</h2>
+          <div class="prose prose--tight">
+            <p>
+              当社は宅地建物取引業者として、宅地建物取引業法その他の関連法令を遵守し、広告・表示、重要事項説明、書面の交付など、説明義務と記録の整備を重視します。
+            </p>
+            <p class="muted">
+              免許番号・宅建主任者などの表示は<a class="textLink" href={withBase('/legal')}>宅建業者表示</a>にてご確認ください。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
       <div class="sectionCta">
         <a class="btn btnGhost" href={withBase('/legal')}>宅建業者表示（免許情報）を見る</a>
         <a class="btn btnGhost" href={withBase('/contact')}>アクセス</a>
+        <a class="btn btnGhost" href={withBase('/faq')}>よくあるご質問</a>
       </div>
     </div>
   </section>

@@ -34,6 +34,11 @@ import { withBase } from '../utils/paths';
               <p class="panelText">
                 ご要望の整理、条件の優先順位付け、契約までの流れを丁寧にご案内します。
               </p>
+              <ul class="bizList">
+                <li><strong class="bizListLabel">対象</strong>：居住用・投資用を問わず、売買・賃貸のご相談や媒介のご依頼</li>
+                <li><strong class="bizListLabel">当社の役割</strong>：条件整理、物件・相手方探索のサポート、説明・契約手続の伴走</li>
+                <li><strong class="bizListLabel">進め方の例</strong>：ヒアリング → 情報提供・内覧等 → 重要事項説明 → 契約 → 決済・引渡し</li>
+              </ul>
             </div>
           </div>
         </article>
@@ -51,6 +56,11 @@ import { withBase } from '../utils/paths';
               <p class="panelText">
                 物件の管理・運用に関する課題を整理し、継続的に改善できる形に整えます。
               </p>
+              <ul class="bizList">
+                <li><strong class="bizListLabel">対象</strong>：オーナー様の賃貸運用、建物・区画の維持管理に関するご相談</li>
+                <li><strong class="bizListLabel">当社の役割</strong>：現状把握、課題の優先付け、運用フローの整理と実行支援</li>
+                <li><strong class="bizListLabel">進め方の例</strong>：状況確認 → 規約・契約条件の整理 → 改善案のすり合わせ → 運用見直し</li>
+              </ul>
             </div>
           </div>
         </article>
@@ -68,10 +78,73 @@ import { withBase } from '../utils/paths';
               <p class="panelText">
                 関係者が多い案件でも、情報の見える化と手続きの進行管理を重視します。
               </p>
+              <ul class="bizList">
+                <li><strong class="bizListLabel">対象</strong>：複数ステークホルダーが関わる取引、手続が細かく分かれやすい案件</li>
+                <li><strong class="bizListLabel">当社の役割</strong>：論点の整理、スケジュール・タスクの可視化、関係者間の情報共有の補助</li>
+                <li><strong class="bizListLabel">進め方の例</strong>：目的・制約の確認 → ロードマップ案 → 定期確認とリスクの早期共有</li>
+              </ul>
             </div>
           </div>
         </article>
       </div>
+
+      <div class="hr"></div>
+
+      <h2 class="sectionTitle">売買・賃貸の流れ（目安）</h2>
+      <p class="flowIntro muted">
+        案件により順序や内容は異なります。以下は一般的なイメージです。
+      </p>
+      <ol class="flowSteps">
+        <li class="flowStep">
+          <span class="flowStepNum" aria-hidden="true">1</span>
+          <div class="flowStepBody">
+            <h3 class="flowStepTitle">ご希望の整理</h3>
+            <p class="flowStepText">エリア、予算、時期、家族構成や運用目的など、優先したい条件をお聞きします。</p>
+          </div>
+        </li>
+        <li class="flowStep">
+          <span class="flowStepNum" aria-hidden="true">2</span>
+          <div class="flowStepBody">
+            <h3 class="flowStepTitle">情報提供・内覧等</h3>
+            <p class="flowStepText">物件概要や権利関係の要点を共有し、実地確認や資料確認の機会を設けます。</p>
+          </div>
+        </li>
+        <li class="flowStep">
+          <span class="flowStepNum" aria-hidden="true">3</span>
+          <div class="flowStepBody">
+            <h3 class="flowStepTitle">条件交渉・申込み</h3>
+            <p class="flowStepText">価格・引渡し時期等の条件を調整し、申込み・承諾に向けた準備を進めます。</p>
+          </div>
+        </li>
+        <li class="flowStep">
+          <span class="flowStepNum" aria-hidden="true">4</span>
+          <div class="flowStepBody">
+            <h3 class="flowStepTitle">重要事項説明</h3>
+            <p class="flowStepText">法令に基づき説明すべき事項を、書面に沿ってご説明します。</p>
+          </div>
+        </li>
+        <li class="flowStep">
+          <span class="flowStepNum" aria-hidden="true">5</span>
+          <div class="flowStepBody">
+            <h3 class="flowStepTitle">契約締結</h3>
+            <p class="flowStepText">売買・賃貸等の契約書を確認のうえ締結します。不明点は契約前に解消します。</p>
+          </div>
+        </li>
+        <li class="flowStep">
+          <span class="flowStepNum" aria-hidden="true">6</span>
+          <div class="flowStepBody">
+            <h3 class="flowStepTitle">決済・登記・引渡し</h3>
+            <p class="flowStepText">残代金決済、所有権移転登記、鍵の引渡し等、取引形態に応じた完了手続を行います。</p>
+          </div>
+        </li>
+        <li class="flowStep">
+          <span class="flowStepNum" aria-hidden="true">7</span>
+          <div class="flowStepBody">
+            <h3 class="flowStepTitle">アフターフォロー</h3>
+            <p class="flowStepText">引渡し後のご不明点や、管理・運用に関するご相談にも可能な範囲で対応します。</p>
+          </div>
+        </li>
+      </ol>
 
       <div class="note">
         <div class="noteTitle">補足</div>
@@ -83,3 +156,94 @@ import { withBase } from '../utils/paths';
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .bizList {
+    margin: 12px 0 0 0;
+    padding-left: 1.2em;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .bizList li + li {
+    margin-top: 8px;
+  }
+
+  .bizListLabel {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .flowIntro {
+    margin: -8px 0 18px 0;
+    font-size: 14px;
+  }
+
+  .flowSteps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    border-radius: var(--radius);
+    border: 1px solid rgba(22, 24, 29, 0.1);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  }
+
+  .flowStep {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 12px 16px;
+    padding: 16px 18px;
+    margin: 0;
+    border-bottom: 1px solid rgba(22, 24, 29, 0.08);
+    align-items: start;
+  }
+
+  .flowStep:last-child {
+    border-bottom: 0;
+  }
+
+  .flowStepNum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(31, 58, 90, 0.1);
+    border: 1px solid rgba(31, 58, 90, 0.15);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--brand);
+  }
+
+  .flowStepTitle {
+    margin: 0 0 6px 0;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+  }
+
+  .flowStepText {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  @media (max-width: 600px) {
+    .flowStep {
+      grid-template-columns: 40px 1fr;
+      padding: 14px 14px;
+    }
+
+    .flowStepNum {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+    }
+  }
+</style>

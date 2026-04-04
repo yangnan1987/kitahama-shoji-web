@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageDecor from '../components/illustrations/PageDecor.astro';
+import { withBase } from '../utils/paths';
+---
+
+<BaseLayout
+  title="北浜商事株式会社 | よくあるご質問"
+  description="不動産取引・個人情報・当サイトの利用に関するよくあるご質問です。"
+>
+  <section class="pageHead">
+    <div class="container pageHeadDecor">
+      <div>
+        <p class="kicker">FAQ</p>
+        <h1 class="pageTitle">よくあるご質問</h1>
+        <p class="pageLead">
+          一般的なご質問への回答です。個別案件の判断や条件は、実際の説明・契約書面をご確認ください。
+        </p>
+      </div>
+      <PageDecor variant="faq" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container faqWrap">
+      <h2 class="faqCategoryTitle">取引全般</h2>
+      <div class="faqList">
+        <details class="faqItem">
+          <summary class="faqSummary">不動産の売買では、どのような流れで進みますか。</summary>
+          <div class="faqBody">
+            <p>
+              一般的には、ご希望条件の整理、物件・買主・売主の探索、重要事項説明、契約、決済・引渡しといった段階を経ます。案件によって必要な手続きや期間は異なります。当社では、各段階で何を行うかを事前に共有し、書面の意味が分かりやすいよう補足説明を行います。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">「重要事項説明」とは何ですか。</summary>
+          <div class="faqBody">
+            <p>
+              宅地建物取引業者が、法令に基づき契約前に説明すべき事項を、記録に残しながら行う説明です。物件の権利関係、法令上の制限、管理費等の負担などが含まれることがあります。内容は案件により異なり、書面（重要事項説明書等）を必ずご確認ください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">契約前に確認しておくとよいことはありますか。</summary>
+          <div class="faqBody">
+            <p>
+              資金計画（頭金・ローン・諸費用）、入居・引渡し時期、付帯設備の有無、管理規約・使用細則（区分所有等の場合）などを整理しておくとスムーズです。ご不明点は、契約前に書面と照らしながらお問い合わせください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">賃貸借でも重要事項説明はありますか。</summary>
+          <div class="faqBody">
+            <p>
+              借家借地の場合など、宅地建物取引業者が仲介する賃貸借では、説明義務の対象となる事項があります。賃貸条件・原状回復・更新などは契約書面とセットでご確認ください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">手数料や諸費用について教えてください。</summary>
+          <div class="faqBody">
+            <p>
+              種類・金額は取引形態や契約内容により異なります。媒介契約や重要事項説明の段階で、報酬の内容が分かるよう説明されることが一般的です。具体的な率や金額については、個別の契約条件および説明書面をご参照ください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">他社で検討中の物件でも相談できますか。</summary>
+          <div class="faqBody">
+            <p>
+              媒介契約の有無や取引段階により、当社が関与できる範囲が変わります。まずは状況をお聞きし、法令・契約上可能な範囲でご案内します。
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h2 class="faqCategoryTitle">個人情報</h2>
+      <div class="faqList">
+        <details class="faqItem">
+          <summary class="faqSummary">個人情報はどのように使われますか。</summary>
+          <div class="faqBody">
+            <p>
+              当社は、不動産取引の手続き・連絡・本人確認、契約履行、法令対応など、業務に必要な範囲で利用します。詳細は<a class="textLink" href={withBase('/privacy')}>プライバシーポリシー</a>をご覧ください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">第三者に個人情報は提供されますか。</summary>
+          <div class="faqBody">
+            <p>
+              法令に基づく場合を除き、ご本人の同意なく第三者へ提供しません。登記手続き等の業務委託先に預託する場合は、必要な契約と監督を行います。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">開示・訂正の請求はできますか。</summary>
+          <div class="faqBody">
+            <p>
+              法令に従い、開示・訂正・利用停止等のご請求に対応します。手続きについてはプライバシーポリシーに記載の方法をご参照ください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">相談内容は秘密にされますか。</summary>
+          <div class="faqBody">
+            <p>
+              業務上知り得た個人情報および取引に関する情報は、適切に管理し、目的外の利用を行いません。
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h2 class="faqCategoryTitle">当サイトの利用</h2>
+      <div class="faqList">
+        <details class="faqItem">
+          <summary class="faqSummary">サイト上の情報は最新ですか。</summary>
+          <div class="faqBody">
+            <p>
+              公開時点の内容を掲載しています。法令・届出・業務内容の変更に応じて更新しますが、必ずしも最新状況を反映しているとは限りません。表示事項は<a class="textLink" href={withBase('/legal')}>宅建業者表示</a>をご確認ください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">取扱物件はどこで見られますか。</summary>
+          <div class="faqBody">
+            <p>
+              物件情報の掲載方針・更新予定は<a class="textLink" href={withBase('/properties')}>取扱物件</a>ページに記載しています。公開中の一覧は整備状況により異なります。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">所在地・地図は正確ですか。</summary>
+          <div class="faqBody">
+            <p>
+              <a class="textLink" href={withBase('/contact')}>アクセス</a>の地図は参考用です。実地での表示や入口は、現地または関係書面でご確認ください。
+            </p>
+          </div>
+        </details>
+        <details class="faqItem">
+          <summary class="faqSummary">お知らせはどこに掲載されますか。</summary>
+          <div class="faqBody">
+            <p>
+              サイトの更新や表示に関する案内は<a class="textLink" href={withBase('/notices')}>お知らせ</a>に掲載します。
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="sectionCta">
+        <a class="btn btnGhost" href={withBase('/company')}>会社概要</a>
+        <a class="btn btnGhost" href={withBase('/business')}>事業内容</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .faqWrap {
+    max-width: 720px;
+  }
+
+  .faqCategoryTitle {
+    font-size: 18px;
+    margin: 32px 0 14px 0;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+
+  .faqCategoryTitle:first-of-type {
+    margin-top: 0;
+  }
+
+  .faqList {
+    display: grid;
+    gap: 10px;
+  }
+
+  .faqItem {
+    border-radius: var(--radius);
+    border: 1px solid rgba(22, 24, 29, 0.1);
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+
+  .faqSummary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    position: relative;
+    padding-right: 40px;
+  }
+
+  .faqSummary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faqSummary::after {
+    content: '';
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--brand);
+    border-bottom: 2px solid var(--brand);
+    transform: translateY(-60%) rotate(45deg);
+    transition: transform 160ms ease;
+  }
+
+  .faqItem[open] .faqSummary::after {
+    transform: translateY(-30%) rotate(225deg);
+  }
+
+  .faqSummary:hover {
+    background: rgba(31, 58, 90, 0.04);
+  }
+
+  .faqBody {
+    padding: 0 18px 16px 18px;
+    border-top: 1px solid rgba(22, 24, 29, 0.06);
+  }
+
+  .faqBody p {
+    margin: 14px 0 0 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+</style>

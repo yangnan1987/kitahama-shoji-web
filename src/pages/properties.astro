@@ -6,7 +6,7 @@ import { withBase } from '../utils/paths';
 
 <BaseLayout
   title="北浜商事株式会社 | 取扱物件"
-  description="取扱物件のご案内。掲載物件は順次更新予定です。"
+  description="取扱エリア・物件タイプの方針、掲載基準および物件情報の見方のご案内。"
 >
   <section class="pageHead">
     <div class="container pageHeadDecor">
@@ -14,7 +14,7 @@ import { withBase } from '../utils/paths';
         <p class="kicker">Properties</p>
         <h1 class="pageTitle">取扱物件</h1>
         <p class="pageLead">
-          公開中の物件情報は準備中です。詳細は順次、本サイトにてご案内する予定です。
+          公開中の一覧掲載は準備・整備中です。取扱いの方針と、今後の更新についてご案内します。
         </p>
       </div>
       <PageDecor variant="properties" />
@@ -23,16 +23,78 @@ import { withBase } from '../utils/paths';
 
   <section class="section">
     <div class="container">
-      <div class="panel panelWide">
-        <h2 class="panelTitle">掲載準備中</h2>
-        <p class="panelText">
-          当サイトへの物件掲載を順次整備してまいります。所在地はアクセスページをご覧ください。
-        </p>
-        <div class="sectionCta">
-          <a class="btn" href={withBase('/contact')}>アクセス</a>
-          <a class="btn btnGhost" href={withBase('/business')}>事業内容を見る</a>
-        </div>
+      <div class="stack">
+        <article class="panel panelWide">
+          <h2 class="panelTitle">想定エリア</h2>
+          <p class="panelText">
+            事務所所在地を踏まえ、大阪市中央区および隣接エリアを中心に、売買・賃貸のご相談を承ることが多い想定です。エリア外の案件も、内容によりご相談可能な場合があります。
+          </p>
+        </article>
+
+        <article class="panel panelWide">
+          <h2 class="panelTitle">取扱いの形態</h2>
+          <p class="panelText">
+            居住用・投資用を問わず、マンション・戸建て・土地などの売買、および賃貸の仲介・代理に関するご相談を扱います。管理運用や手続整理に関するご相談は<a class="textLink" href={withBase('/business')}>事業内容</a>をご参照ください。
+          </p>
+        </article>
+
+        <article class="panel panelWide">
+          <h2 class="panelTitle">本サイトへの掲載基準</h2>
+          <ul class="propList">
+            <li>公開して差し支えない情報に限り、物件の概要を掲載します。</li>
+            <li>価格・空室状況・権利関係等は変動しうるため、掲載時点の内容であり契約内容を保証するものではありません。</li>
+            <li>成約済み・募集終了となった物件は、速やかに掲載を終了または更新します。</li>
+          </ul>
+        </article>
+
+        <article class="panel panelWide">
+          <h2 class="panelTitle">情報更新の方針</h2>
+          <p class="panelText">
+            物件一覧のシステム整備が完了次第、本ページまたは関連ページからご案内します。サイト全体の更新は<a class="textLink" href={withBase('/notices')}>お知らせ</a>でもお知らせする予定です。
+          </p>
+        </article>
+
+        <article class="panel panelWide panelMuted">
+          <h2 class="panelTitle">物件情報を掲載する場合の見方（将来用）</h2>
+          <ul class="propList">
+            <li>所在地、交通、専有面積、築年、価格または賃料、管理費等の表示単位を確認してください。</li>
+            <li>図面・写真は現況を優先し、実測・登記簿謄本等で最終確認してください。</li>
+            <li>不明点は、契約前に書面説明・重要事項説明で必ず解消してください。</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="sectionCta propCtas">
+        <a class="btn" href={withBase('/contact')}>アクセス（所在地）</a>
+        <a class="btn btnGhost" href={withBase('/business')}>事業内容を見る</a>
+        <a class="btn btnGhost" href={withBase('/faq')}>よくあるご質問</a>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .propList {
+    margin: 10px 0 0 0;
+    padding-left: 1.2em;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .propList li + li {
+    margin-top: 8px;
+  }
+
+  .panelMuted {
+    background: rgba(31, 58, 90, 0.04);
+    border-color: rgba(31, 58, 90, 0.1);
+  }
+
+  .propCtas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+</style>
