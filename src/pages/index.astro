@@ -4,6 +4,9 @@ import { SITE } from '../constants/site';
 import { withBase } from '../utils/paths';
 import { getCollection } from 'astro:content';
 
+const heroBgHref = withBase('/images/hero-bg.jpg');
+const heroBgCss = `url('${heroBgHref}')`;
+
 const noticeEntries = await getCollection('notices');
 const latestNotices = noticeEntries
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -20,7 +23,8 @@ const dateFmt = new Intl.DateTimeFormat('ja-JP', {
   title="北浜商事株式会社 | トップ"
   description="大阪・中央区を拠点とする不動産会社の公式サイト。会社情報・事業内容・宅建表示を掲載しています。"
 >
-  <section class="hero">
+  <link slot="head" rel="preload" as="image" href={heroBgHref} fetchpriority="high" />
+  <section class="hero hero--home" style={`--heroBgCss:${heroBgCss}`}>
     <div class="container heroInner">
       <div class="heroCopy">
         <p class="kicker">大阪・中央区 / 不動産</p>
@@ -142,6 +146,60 @@ const dateFmt = new Intl.DateTimeFormat('ja-JP', {
 </BaseLayout>
 
 <style>
+  .hero--home {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .hero--home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: var(--heroBgCss);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero--home::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(251, 251, 250, 0.94) 0%,
+      rgba(251, 251, 250, 0.78) 32%,
+      rgba(251, 251, 250, 0.52) 58%,
+      rgba(251, 251, 250, 0.22) 100%
+    );
+  }
+
+  .hero--home .heroInner {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero--home .card {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(22, 24, 29, 0.12);
+  }
+
+  @media (max-width: 900px) {
+    .hero--home::after {
+      background: linear-gradient(
+        180deg,
+        rgba(251, 251, 250, 0.96) 0%,
+        rgba(251, 251, 250, 0.82) 38%,
+        rgba(251, 251, 250, 0.58) 68%,
+        rgba(251, 251, 250, 0.32) 100%
+      );
+    }
+  }
+
   .section--tightTop {
     padding-top: 8px;
   }

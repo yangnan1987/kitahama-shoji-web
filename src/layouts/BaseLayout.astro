@@ -45,6 +45,7 @@ const ogImageUrl = ogImage ?? new URL(`${baseUrlNormalized}favicon.svg`, Astro.s
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={desc} />
     <meta name="twitter:image" content={ogImageUrl} />
+    <slot name="head" />
   </head>
   <body>
     <div class="page">
