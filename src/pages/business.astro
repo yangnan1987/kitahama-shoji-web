@@ -4,14 +4,14 @@ import PageDecor from '../components/illustrations/PageDecor.astro';
 import { withBase } from '../utils/paths';
 ---
 
-<BaseLayout title="北浜商事株式会社 | 事業内容" description="不動産の売買・賃貸・仲介、管理・コンサルティング等の事業内容。">
+<BaseLayout title="北浜商事株式会社 | 事業内容" description="不動産の売買・仲介、賃貸の仲介・代理、管理・コンサルティング。">
   <section class="pageHead">
     <div class="container pageHeadDecor">
       <div>
         <p class="kicker">Business</p>
         <h1 class="pageTitle">事業内容</h1>
         <p class="pageLead">
-          不動産に関する情報の整理から、手続きの進め方まで、分かりやすくご案内します。
+          不動産の売買・仲介と、賃貸の仲介・代理をご案内します。管理・コンサルティングについても、ご相談内容に応じて手続きを整理します。
         </p>
       </div>
       <PageDecor variant="business" />
@@ -30,14 +30,38 @@ import { withBase } from '../utils/paths';
               </svg>
             </div>
             <div class="panelRowBody">
-              <h2 class="panelTitle">不動産の売買・交換・賃貸および仲介／代理</h2>
+              <h2 class="panelTitle">不動産の売買・仲介</h2>
               <p class="panelText">
-                ご要望の整理、条件の優先順位付け、契約までの流れを丁寧にご案内します。
+                住宅などの不動産の売買、および売買の仲介を行います。ご要望の整理から契約までの流れを丁寧にご案内します。
               </p>
               <ul class="bizList">
-                <li><strong class="bizListLabel">対象</strong>：居住用・投資用を問わず、売買・賃貸のご相談や媒介のご依頼</li>
-                <li><strong class="bizListLabel">当社の役割</strong>：条件整理、物件・相手方探索のサポート、説明・契約手続の伴走</li>
-                <li><strong class="bizListLabel">進め方の例</strong>：ヒアリング → 情報提供・内覧等 → 重要事項説明 → 契約 → 決済・引渡し</li>
+                <li><strong class="bizListLabel">対象</strong>：居住用・投資用を問わず、マンション・戸建て・土地などの売買、および売買の媒介のご依頼</li>
+                <li><strong class="bizListLabel">当社の役割</strong>：条件整理、相手方探索のサポート、説明・契約手続の伴走</li>
+                <li><strong class="bizListLabel">進め方の例</strong>：ヒアリング → 情報提供・内覧等 → 条件交渉 → 重要事項説明 → 契約 → 決済・引渡し</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel panelWide panel--accent">
+          <div class="panelRow">
+            <div class="panelRowIcon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="15" r="3.5" stroke="currentColor" stroke-width="1.8" />
+                <path d="M11 13.2L19.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M15.5 7.5l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M17.5 5.5l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="panelRowBody">
+              <h2 class="panelTitle">賃貸の仲介・代理</h2>
+              <p class="panelText">
+                貸主・借主のご依頼により、不動産賃貸の仲介・代理を行います。条件の整理から契約までの流れを分かりやすくご案内します。
+              </p>
+              <ul class="bizList">
+                <li><strong class="bizListLabel">対象</strong>：貸主・借主からの、不動産賃貸の仲介・代理のご依頼</li>
+                <li><strong class="bizListLabel">当社の役割</strong>：条件整理、賃貸条件の説明、契約手続の伴走</li>
+                <li><strong class="bizListLabel">進め方の例</strong>：ヒアリング → 条件整理 → 重要事項説明 → 賃貸借契約 → 鍵の引渡し</li>
               </ul>
             </div>
           </div>
@@ -92,7 +116,7 @@ import { withBase } from '../utils/paths';
 
       <h2 class="sectionTitle">売買・賃貸の流れ（目安）</h2>
       <p class="flowIntro muted">
-        案件により順序や内容は異なります。以下は一般的なイメージです。
+        案件により順序や内容は異なります。以下は一般的なイメージです。ここでの賃貸は、賃貸の仲介・代理を指します。
       </p>
       <ol class="flowSteps">
         <li class="flowStep">

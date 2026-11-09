@@ -21,7 +21,7 @@ const dateFmt = new Intl.DateTimeFormat('ja-JP', {
 
 <BaseLayout
   title="北浜商事株式会社 | トップ"
-  description="大阪・中央区を拠点とする不動産会社の公式サイト。会社情報・事業内容・宅建表示を掲載しています。"
+  description="大阪・中央区を拠点に、不動産の売買・仲介および賃貸の仲介・代理を行う北浜商事株式会社の公式サイト。"
 >
   <link slot="head" rel="preload" as="image" href={heroBgHref} fetchpriority="high" />
   <section class="hero hero--home" style={`--heroBgCss:${heroBgCss}`}>
@@ -33,7 +33,7 @@ const dateFmt = new Intl.DateTimeFormat('ja-JP', {
           住まいと資産の選択を支える。
         </h1>
         <p class="heroLead">
-          北浜商事株式会社は、誠実な説明と丁寧な手続きを大切に、不動産に関する情報を分かりやすくお届けします。
+          北浜商事株式会社は、不動産の売買・仲介、および賃貸の仲介・代理を行っています。誠実な説明と丁寧な手続きを大切に、必要な情報を分かりやすくお届けします。
         </p>
         <div class="heroCtas" role="group" aria-label="主要導線">
           <a class="btn" href={withBase('/company')}>会社概要を見る</a>
@@ -56,6 +56,29 @@ const dateFmt = new Intl.DateTimeFormat('ja-JP', {
   </section>
 
   <section class="section">
+    <div class="container">
+      <h2 class="sectionTitle">不動産の売買・賃貸</h2>
+      <div class="grid3">
+        <div class="panel featureCard">
+          <h3 class="panelTitle">売買・仲介</h3>
+          <p class="panelText">住宅などの不動産の売買、および売買の仲介を行います。条件整理から契約まで、手順を分かりやすくご案内します。</p>
+        </div>
+        <div class="panel featureCard">
+          <h3 class="panelTitle">賃貸仲介</h3>
+          <p class="panelText">貸主・借主のご依頼により、不動産賃貸の仲介・代理を行います。</p>
+        </div>
+        <div class="panel featureCard">
+          <h3 class="panelTitle">管理・コンサルティング</h3>
+          <p class="panelText">運用・管理に関するお悩みを整理し、実行可能な形に落とし込みます。</p>
+        </div>
+      </div>
+      <div class="sectionCta">
+        <a class="textLink" href={withBase('/business')}>事業内容の詳細へ</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tightTop">
     <div class="container">
       <h2 class="sectionTitle">大切にしていること</h2>
       <div class="grid2and2">
@@ -90,29 +113,6 @@ const dateFmt = new Intl.DateTimeFormat('ja-JP', {
           <a class="btn btnGhost" href={withBase('/legal')}>宅建業者表示を見る</a>
           <a class="textLink" href={withBase('/faq')}>よくあるご質問</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="sectionTitle">事業のご案内</h2>
-      <div class="grid3">
-        <div class="panel featureCard">
-          <h3 class="panelTitle">売買・仲介</h3>
-          <p class="panelText">条件整理から契約まで、安心して進められるよう丁寧にご案内します。</p>
-        </div>
-        <div class="panel featureCard">
-          <h3 class="panelTitle">賃貸</h3>
-          <p class="panelText">入居・運用のご要望を踏まえ、最適な選択肢をご提案します。</p>
-        </div>
-        <div class="panel featureCard">
-          <h3 class="panelTitle">管理・コンサルティング</h3>
-          <p class="panelText">運用・管理に関するお悩みを整理し、実行可能な形に落とし込みます。</p>
-        </div>
-      </div>
-      <div class="sectionCta">
-        <a class="textLink" href={withBase('/business')}>事業内容の詳細へ</a>
       </div>
     </div>
   </section>
